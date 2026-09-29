@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center">
+    <h2 class="text-primary fw-bold">Welcome, {{ user.username }}</h2>
+    <p class="lead mt-3">Submit a job posting and let AI detect if it's fake.</p>
+
+    <a href="{% url 'submit_job' %}" class="btn btn-primary btn-lg mt-3 px-5">
+        Submit New Job
+    </a>
+</div>
+
+{% endblock %}

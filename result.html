@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center">
+    <div class="card shadow p-5">
+        <h2 class="fw-bold">Prediction Result</h2>
+
+        {% if result.prediction == "Fake" %}
+            <h3 class="text-danger mt-3">⚠️ This Job is FAKE</h3>
+        {% else %}
+            <h3 class="text-success mt-3">✅ This Job is REAL</h3>
+        {% endif %}
+
+        <p class="mt-3">
+            Confidence: <strong>{{ result.confidence }}%</strong>
+        </p>
+
+        <a href="{% url 'dashboard' %}" class="btn btn-primary mt-3">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+
+{% endblock %}

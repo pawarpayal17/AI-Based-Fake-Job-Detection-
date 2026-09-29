@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | AI Fake Job Detector{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary">About Our AI Fake Job Detection System</h1>
+        <p class="lead text-muted">
+            Protecting job seekers from online fraud using Artificial Intelligence.
+        </p>
+    </div>
+
+    <div class="row align-items-center">
+        
+        <!-- Left Side Content -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">Our Mission</h3>
+            <p>
+                Our mission is to prevent job seekers from falling victim to fake job postings.
+                Using Machine Learning and Natural Language Processing, our system analyzes
+                job descriptions and predicts whether a job is Real or Fake.
+            </p>
+
+            <h3 class="fw-bold mt-4">Technology Used</h3>
+            <ul>
+                <li>Python</li>
+                <li>Django Framework</li>
+                <li>Scikit-learn</li>
+                <li>TF-IDF Vectorization</li>
+                <li>Logistic Regression</li>
+                <li>SQLite Database</li>
+            </ul>
+
+            <h3 class="fw-bold mt-4">Why This Project?</h3>
+            <p>
+                Online job fraud is increasing rapidly. This platform helps users verify
+                job postings before applying, reducing financial and personal risk.
+            </p>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="col-md-6 text-center">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e7bf"
+                 class="img-fluid rounded shadow"
+                 alt="AI Job Detection">
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

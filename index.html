@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+.hero-section {
+    padding: 90px 0;
+    display: flex;
+    align-items: center;   /* vertical center */
+    justify-content: center; /* horizontal center */
+}
+.hero-contain{
+    max-width:650px;
+    margin:0 auto;
+    text-align:center;
+
+
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+.hero-description {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 500px;
+    text-align:center;
+    justify-content:center;
+}
+
+.highlight {
+    color: #0d6efd;
+}
+
+.hero-text {
+    font-size: 17px;
+    color: #666;
+    line-height:1.7;
+    margin-top:-35px;
+}
+
+.hero-button{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    
+}
+.btn-primary-custom {
+    background: #0d6efd;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    color:white;
+}
+
+.btn-outline-custom {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    background:transparent;
+
+}
+
+.hero-img {
+    width: 85%;
+    height:525px;
+    margin-top:-30px;
+    border-radius: 20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+</style>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-md-6">
+                <h1 class="hero-title">
+                    Detect <span class="highlight">Fake Job Posts</span>  
+                    Using AI Technology
+                </h1>
+
+                <p class="hero-description">
+                    Our AI-powered system analyzes job descriptions using
+                    Machine Learning and NLP to identify fraudulent job postings
+                    with high confidence accuracy.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{% url 'submit_job' %}" class="btn btn-primary-custom me-3">
+                        🚀 Check a Job Now
+                    </a>
+                    <a href="/about_us/" class="btn btn-outline-custom">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-md-6 text-center">
+                <img src="{% static 'images/women.png' %}"
+                     class="hero-img"
+                     alt="Professional AI Job Detection">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section>
+    <div class="container">
+        <div class="row g-4 mt-4">
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>⚡ Fast Prediction</h4>
+                    <p>Instant AI-based job classification in seconds.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>🔍 NLP Analysis</h4>
+                    <p>TF-IDF + Machine Learning model for accurate results.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h4>📊 Confidence Score</h4>
+                    <p>Shows real vs fake probability with percentage.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

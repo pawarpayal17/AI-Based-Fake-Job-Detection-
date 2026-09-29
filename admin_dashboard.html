@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="text-primary mb-4">Admin Dashboard - All Submissions</h3>
+
+<table class="table table-bordered table-hover shadow">
+    <thead class="table-primary">
+        <tr>
+            <th>User</th>
+            <th>Title</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+            {% for result in job.predictionresult_set.all %}
+            <tr>
+                <td>{{ job.user.username }}</td>
+                <td>{{ job.title }}</td>
+                <td>
+                    {% if result.prediction == "Fake" %}
+                        <span class="badge bg-danger">Fake</span>
+                    {% else %}
+                        <span class="badge bg-success">Real</span>
+                    {% endif %}
+                </td>
+                <td>{{ result.confidence }}%</td>
+                <td>{{ result.created_at }}</td>
+            </tr>
+            {% endfor %}
+        {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No submissions found.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
